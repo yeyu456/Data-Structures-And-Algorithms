@@ -1,4 +1,4 @@
-package com.algorithms.random;
+package com.algorithms.random.lcg;
 
 /**
  * Pseudo Random Number Generate Algorithm - Linear Congruential Generator(aka LCG)

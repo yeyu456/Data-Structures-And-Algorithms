@@ -2,6 +2,7 @@
 Data Structures And Algorithms Implements
 
 ## Indexes
+### Data Structures
 
 ### Search
 - Binary Search
@@ -9,24 +10,25 @@ Data Structures And Algorithms Implements
     - [Fibonacci Search](src/com/algorithms/search/FibonacciSearch.java)
     - [Bitonic Search](src/com/algorithms/search/BitonicSearch.java)
 
-## Sorting
-- [Bubble Sort](src/com/algorithms/sort/BubbleSort.java)
-- [Insertion Sort](src/com/algorithms/sort/InsertionSort.java)
-- [Selection Sort](src/com/algorithms/sort/SelectionSort.java)
-- [Merge Sort](src/com/algorithms/sort/MergeSort.java)
-- [Quick Sort](src/com/algorithms/sort/QuickSort.java)
-
-## Random
-- [Middle Square](src/com/algorithms/random/MiddleSquare.java)
-- [Linear Congruential Generator](src/com/algorithms/random/LCG.java)
-- [Mersenne Twister](src/com/algorithms/random/MersenneTwister.java)
-
-## Hash
-- [Mod Hash](src/com/algorithms/ModHash.java)
-
-## Todo
-- Sorting
+### Sorting
+- Bubble Sort
+    - [Bubble Sort](src/com/algorithms/sort/impl/bubble/BubbleSort.java)
+    - Cocktail Sort
+- Selection Sort
+    - [Selection Sort](src/com/algorithms/sort/impl/selection/SelectionSort.java)
     - Bingo Sort
+- [Insertion Sort](src/com/algorithms/sort/impl/InsertionSort.java)
+- Merge Sort
+- Quick Sort
+
+### Random
+- [Middle Square](src/com/algorithms/random/MiddleSquare.java)
+- Linear Congruential Generator
+    - [Linear Congruential Generator](src/com/algorithms/random/lcg/LCG.java)
 - Linear Feedback Shift Register
     - Fabonacci LFSR
     - Galois LFSR
+    - Mersenne Twister
+
+### Hash
+- [Mod Hash](src/com/algorithms/ModHash.java)

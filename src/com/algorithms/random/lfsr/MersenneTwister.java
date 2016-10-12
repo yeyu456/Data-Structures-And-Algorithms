@@ -1,4 +1,4 @@
-package com.algorithms.random;
+package com.algorithms.random.lfsr;
 
 /**
  * Pseudo Random Number Generate Algorithm - Mersenne Twister
