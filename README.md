@@ -17,7 +17,9 @@ Data Structures And Algorithms Implements
 - Selection Sort
     - [Selection Sort](src/com/algorithms/sort/selection/SelectionSort.java)
     - Bingo Sort
-- [Insertion Sort](src/com/algorithms/sort/InsertionSort.java)
+- Insertion Sort
+    - [Insertion Sort](src/com/algorithms/sort/insertion/InsertionSort.java)
+    - [Shell Sort](src/com/algorithms/sort/insertion/ShellSort.java)
 - Merge Sort
 - Quick Sort
 

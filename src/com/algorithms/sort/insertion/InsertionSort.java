@@ -1,4 +1,4 @@
-package com.algorithms.sort.impl;
+package com.algorithms.sort.insertion;
 
 import com.algorithms.sort.Sort;
 
