@@ -13,6 +13,7 @@ Data Structures And Algorithms Implements
 - [Bubble Sort](src/com/algorithms/sort/BubbleSort.java)
 - [Insertion Sort](src/com/algorithms/sort/InsertionSort.java)
 - [Selection Sort](src/com/algorithms/sort/SelectionSort.java)
+- [Merge Sort](src/com/algorithms/sort/MergeSort.java)
 - [Quick Sort](src/com/algorithms/sort/QuickSort.java)
 
 ## Random

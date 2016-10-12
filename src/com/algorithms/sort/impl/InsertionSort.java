@@ -6,7 +6,7 @@ import com.algorithms.sort.Sort;
  * Insertion Sort Implement
  * 插入排序实现
  */
-public class InsertionSort extends BaseSort {
+public class InsertionSort implements Sort {
 
     @Override
     public void sort(int[] data) {

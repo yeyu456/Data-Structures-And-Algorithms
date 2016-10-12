@@ -1,10 +1,12 @@
 package com.algorithms.sort.impl;
 
+import com.algorithms.sort.Sort;
+
 /**
- * Algorithms 4th Section 2.1.2 Selection Sort
- * 算法第4版 章节 2.1.2 选择排序
+ * Selection Sort Implement
+ * 选择排序实现
  */
-public class SelectionSort extends BaseSort {
+public class SelectionSort implements Sort {
 
     public void sort(int[] data) {
         if (data == null || data.length <= 1) {

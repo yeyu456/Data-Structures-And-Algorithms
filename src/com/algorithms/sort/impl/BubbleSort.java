@@ -6,7 +6,7 @@ import com.algorithms.sort.Sort;
  * Bubble Sort Implement
  * 冒泡排序实现
  */
-public class BubbleSort extends BaseSort {
+public class BubbleSort implements Sort {
 
     @Override
     public void sort(int[] data) {
