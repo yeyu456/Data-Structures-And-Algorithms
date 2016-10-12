@@ -12,12 +12,12 @@ Data Structures And Algorithms Implements
 
 ### Sorting
 - Bubble Sort
-    - [Bubble Sort](src/com/algorithms/sort/impl/bubble/BubbleSort.java)
+    - [Bubble Sort](src/com/algorithms/sort/bubble/BubbleSort.java)
     - Cocktail Sort
 - Selection Sort
-    - [Selection Sort](src/com/algorithms/sort/impl/selection/SelectionSort.java)
+    - [Selection Sort](src/com/algorithms/sort/selection/SelectionSort.java)
     - Bingo Sort
-- [Insertion Sort](src/com/algorithms/sort/impl/InsertionSort.java)
+- [Insertion Sort](src/com/algorithms/sort/InsertionSort.java)
 - Merge Sort
 - Quick Sort
 

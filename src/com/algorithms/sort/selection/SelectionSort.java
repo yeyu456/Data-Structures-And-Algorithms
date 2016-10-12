@@ -1,4 +1,4 @@
-package com.algorithms.sort.impl.selection;
+package com.algorithms.sort.selection;
 
 import com.algorithms.sort.Sort;
 

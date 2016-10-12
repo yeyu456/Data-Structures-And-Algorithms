@@ -12,7 +12,4 @@ public class MersenneTwister {
         this.seed = seed;
     }
 
-    public long random() {
-
-    }
 }
