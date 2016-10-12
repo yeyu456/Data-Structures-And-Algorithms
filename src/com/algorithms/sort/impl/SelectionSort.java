@@ -16,10 +16,10 @@ public class SelectionSort extends BaseSort {
                 if (data[j] < data[min]) {
                     min = j;
                 }
-                int tmp = data[min];
-                data[min] = data[i];
-                data[i] = tmp;
             }
+            int tmp = data[min];
+            data[min] = data[i];
+            data[i] = tmp;
         }
     }
 }

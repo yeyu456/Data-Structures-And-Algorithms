@@ -8,6 +8,6 @@ public class QuickSort extends BaseSort {
 
     @Override
     public void sort(int[] data) {
-        
+
     }
 }
