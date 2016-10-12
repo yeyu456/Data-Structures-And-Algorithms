@@ -25,6 +25,8 @@ Data Structures And Algorithms Implements
 - [Mod Hash](src/com/algorithms/ModHash.java)
 
 ## Todo
+- Sorting
+    - Bingo Sort
 - Linear Feedback Shift Register
     - Fabonacci LFSR
     - Galois LFSR
