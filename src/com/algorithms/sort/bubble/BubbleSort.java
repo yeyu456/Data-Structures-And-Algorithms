@@ -10,7 +10,7 @@ public class BubbleSort implements Sort {
 
     @Override
     public void sort(int[] data) {
-        if (data == null || data.length <= 1) {
+        if (!valid(data)) {
             return;
         }
         boolean isSwapped;
@@ -26,7 +26,7 @@ public class BubbleSort implements Sort {
     }
 
     public void sortR1(int[] data) {
-        if (data == null || data.length <= 1) {
+        if (!valid(data)) {
             return;
         }
         boolean isSwapped;

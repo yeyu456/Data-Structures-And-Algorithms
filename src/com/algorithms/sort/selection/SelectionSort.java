@@ -9,7 +9,7 @@ import com.algorithms.sort.Sort;
 public class SelectionSort implements Sort {
 
     public void sort(int[] data) {
-        if (data == null || data.length <= 1) {
+        if (!valid(data)) {
             return;
         }
         for (int i = 0; i < data.length; i++) {

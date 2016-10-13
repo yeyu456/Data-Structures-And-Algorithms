@@ -23,4 +23,12 @@ public interface Sort {
         data[index1] = data[index2];
         data[index2] = tmp;
     }
+
+    default boolean valid(int[] data) {
+        if (data == null || data.length <= 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
