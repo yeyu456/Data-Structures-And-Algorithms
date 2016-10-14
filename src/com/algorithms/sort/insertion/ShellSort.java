@@ -73,10 +73,20 @@ public class ShellSort extends InsertionSort {
     }
 
     /**
-     * By Vaughan Pratt, 1971
+     * By Pratt, 1971
      * @param data 待排序数组
      */
-    public void pt71(int[] data) {
+    public void pr71(int[] data) {
+        if (!valid(data)) {
+            return;
+        }
+    }
+
+    /**
+     * By Donald Ervin Knuth, 1973
+     * @param data 待排序数组
+     */
+    public void kn73(int[] data) {
         if (!valid(data)) {
             return;
         }
@@ -91,16 +101,10 @@ public class ShellSort extends InsertionSort {
     }
 
     /**
-     * By Sedgewick, 1986
+     * By Sedgewick, 1982
      * @param data 待排序数组
      */
-    public void se86(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-    }
-
-    public void se98(int[] data) {
+    public void se82(int[] data) {
         if (!valid(data)) {
             return;
         }
@@ -113,5 +117,59 @@ public class ShellSort extends InsertionSort {
             k--;
         }
         sortByGap(data, 1);
+    }
+
+    /**
+     * By Sedgewick, 1986
+     * @param data 待排序数组
+     */
+    public void se86(int[] data) {
+        if (!valid(data)) {
+            return;
+        }
+        int k = -1;
+        int gap;
+        do {
+            k++;
+            if (k % 2 == 1) {
+                gap = 8 * (2 << k) - 6 * (2 << ((k + 1) / 2)) + 1;
+            } else {
+                gap =  9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
+            }
+        } while (gap < data.length);
+
+        while (k >= 0) {
+            if (k % 2 == 1) {
+                gap = 8 * (2 << k) - 6 * (2 << ((k + 1) / 2)) + 1;
+            } else {
+                gap =  9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
+            }
+            sortByGap(data, gap);
+            k--;
+        }
+    }
+
+    /**
+     * By Gonnet & Baeza-Yates, 1991
+     * @param data 待排序数组
+     */
+    public void gb91(int[] data) {
+
+    }
+
+    /**
+     * By Tokuda, 1992
+     * @param data 待排序数组
+     */
+    public void to92(int[] data) {
+
+    }
+
+    /**
+     *
+     * @param data 待排序数组
+     */
+    public void ci01(int[] data) {
+
     }
 }
