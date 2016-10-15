@@ -3,8 +3,8 @@ package com.algorithms.sort.insertion;
 import com.algorithms.sort.Sort;
 
 /**
- * Insertion Sort Implement
- * 插入排序实现
+ * Standard Insertion Sort And Its Optimizations
+ * 标准插入排序及其改进版本
  */
 public class InsertionSort implements Sort {
 

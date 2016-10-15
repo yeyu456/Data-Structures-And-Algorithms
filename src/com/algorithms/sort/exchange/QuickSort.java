@@ -1,4 +1,4 @@
-package com.algorithms.sort.impl;
+package com.algorithms.sort.exchange;
 
 import com.algorithms.sort.Sort;
 

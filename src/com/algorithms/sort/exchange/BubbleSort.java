@@ -3,8 +3,8 @@ package com.algorithms.sort.exchange;
 import com.algorithms.sort.Sort;
 
 /**
- * Bubble Sort Implement
- * 冒泡排序实现
+ * Standard Bubble Sort And Its Optimizations
+ * 标准冒泡排序及其改进版本
  */
 public class BubbleSort implements Sort {
 

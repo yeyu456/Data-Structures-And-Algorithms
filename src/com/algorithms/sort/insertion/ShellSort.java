@@ -1,15 +1,20 @@
 package com.algorithms.sort.insertion;
 
-import com.algorithms.sort.Sort;
-
 /**
- * Shell Sort Implement
- * 希尔排序实现
+ * Standard Shell Sort And Its Optimizations
+ * 标准希尔排序及其改进版本
  */
 public class ShellSort extends InsertionSort {
 
     /**
      * By Donald L. Shell, 1959
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      h_k = N / (2^k), k >= 1
+     * Latex格式:
+     *      h_{k} = \left \lfloor \frac {N} {2^{k}} \right \rfloor, h_{k} \geqslant 1
+     *
      * @param data 待排序数组
      */
     @Override
@@ -24,6 +29,13 @@ public class ShellSort extends InsertionSort {
 
     /**
      * By Frank & Lazarus, 1960
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      h_k = 2 * (N / (2^(k+1))), k >= 1
+     * Latex格式:
+     *      h_{k} = 2 \times \left \lfloor \frac {N} {2^{k+1}} \right \rfloor + 1, h_{k} \geqslant 1
+     *
      * @param data 待排序数组
      */
     public void fl60(int[] data) {
@@ -37,6 +49,13 @@ public class ShellSort extends InsertionSort {
 
     /**
      * By Hibbard, 1963
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      h_k = 2^k - 1, h_k < N
+     * Latex格式:
+     *      h_{k} = 2^{k} - 1, h_{k} <  N
+     *
      * @param data 待排序数组
      */
     public void hi63(int[] data) {
