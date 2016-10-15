@@ -11,7 +11,7 @@ Data Structures And Algorithms Implements
     - [Bitonic Search](src/com/algorithms/search/BitonicSearch.java)
 
 ### Sorting
-- Bubble Sort
+- Exchange sort
     - [Bubble Sort](src/com/algorithms/sort/bubble/BubbleSort.java)
     - Cocktail Sort
 - Selection Sort
@@ -21,6 +21,7 @@ Data Structures And Algorithms Implements
     - [Insertion Sort](src/com/algorithms/sort/insertion/InsertionSort.java)
     - [Shell Sort](src/com/algorithms/sort/insertion/ShellSort.java)
 - Merge Sort
+    - [Merge Sort](src/com/algorithms/sort/merge/MergeSort.java)
 - Quick Sort
 
 ### Random
