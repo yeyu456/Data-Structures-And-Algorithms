@@ -1,4 +1,4 @@
-package com.algorithms.sort.bubble;
+package com.algorithms.sort.exchange;
 
 import com.algorithms.sort.Sort;
 
