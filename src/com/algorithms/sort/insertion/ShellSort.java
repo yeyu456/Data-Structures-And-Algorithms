@@ -11,8 +11,8 @@ public class ShellSort extends InsertionSort {
      *
      * 假设 N 为给定数组长度
      * 排序间隔的表达式:
-     *      h_k = N / (2^k), k >= 1
-     * Latex格式:
+     *      h_k = Math.floor(N / (2^k)), k >= 1
+     * LaTeX格式:
      *      h_{k} = \left \lfloor \frac {N} {2^{k}} \right \rfloor, h_{k} \geqslant 1
      *
      * @param data 待排序数组
@@ -32,8 +32,8 @@ public class ShellSort extends InsertionSort {
      *
      * 假设 N 为给定数组长度
      * 排序间隔的表达式:
-     *      h_k = 2 * (N / (2^(k+1))), k >= 1
-     * Latex格式:
+     *      h_k = 2 * Math.floor(N / (2^(k+1))) + 1, k >= 1
+     * LaTeX格式:
      *      h_{k} = 2 \times \left \lfloor \frac {N} {2^{k+1}} \right \rfloor + 1, h_{k} \geqslant 1
      *
      * @param data 待排序数组
@@ -53,8 +53,8 @@ public class ShellSort extends InsertionSort {
      * 假设 N 为给定数组长度
      * 排序间隔的表达式:
      *      h_k = 2^k - 1, h_k < N
-     * Latex格式:
-     *      h_{k} = 2^{k} - 1, h_{k} <  N
+     * LaTeX格式:
+     *      h_{k} = 2^{k} - 1, h_{k} < N
      *
      * @param data 待排序数组
      */
@@ -74,21 +74,27 @@ public class ShellSort extends InsertionSort {
 
     /**
      * By Papernov & Stasevich, 1965
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      h_k = 2^k + 1, h_k < N
+     * LaTeX格式:
+     *      h_{k} = 2^{k} + 1, h_{k} < N
+     *
      * @param data 待排序数组
      */
     public void ps65(int[] data) {
         if (!valid(data)) {
             return;
         }
-        int k = 1;
+        int k = 0;
         while (((2 << k) + 1) < data.length) {
             k++;
         }
-        while (k > 0) {
+        while (k >= 0) {
             sortByGap(data, (2 << k) + 1);
             k--;
         }
-        sortByGap(data, 1);
     }
 
     /**
@@ -99,10 +105,18 @@ public class ShellSort extends InsertionSort {
         if (!valid(data)) {
             return;
         }
+        //TODO
     }
 
     /**
      * By Donald Ervin Knuth, 1973
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      h_k = (3^k - 1) / 2, h_k <= Math.ceil(N / 3)
+     * LaTeX格式:
+     *      h_{k} = \frac{3^{k} - 1}{2}, h_{k} \leq \left \lceil \frac{N}{3} \right \rceil
+     *
      * @param data 待排序数组
      */
     public void kn73(int[] data) {
@@ -121,6 +135,13 @@ public class ShellSort extends InsertionSort {
 
     /**
      * By Sedgewick, 1982
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      h_k = 4^k + 3 * 2^(k-1) + 1, h_k < N
+     * LaTeX格式:
+     *      h_{k} = 4 ^ {k} + 3 \times 2 ^ {k-1} + 1, h_{k} < N
+     *
      * @param data 待排序数组
      */
     public void se82(int[] data) {
@@ -140,6 +161,17 @@ public class ShellSort extends InsertionSort {
 
     /**
      * By Sedgewick, 1986
+     *
+     * 假设 N 为给定数组长度
+     * 排序间隔的表达式:
+     *      if k为奇数
+     *          h_k = 8 * 2^k - 6 * (2^((k + 1) / 2)) + 1,
+     *      k为偶数
+     *          h_k = 9 * 2^k - 9 * (2^(k / 2)) + 1,
+     *      h_k < N
+     * LaTeX格式:
+     *
+     *
      * @param data 待排序数组
      */
     public void se86(int[] data) {

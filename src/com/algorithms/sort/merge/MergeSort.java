@@ -61,11 +61,10 @@ public class MergeSort implements Sort {
         }
         int mid = data.length / 2;
         bottom2top(mid, data);
-        // i < data.length - 1, merge util only one element not sorted
+        // i < data.length - 1, 合并直到只剩最后一个元素
         for (int i = mid; i < data.length - 1; i += (data.length - i) / 2) {
             merge(0, i, (data.length - i) / 2 + i, data);
         }
-        //merge last element
         //合并最后一个元素
         merge(0, data.length - 2, data.length - 1, data);
     }
