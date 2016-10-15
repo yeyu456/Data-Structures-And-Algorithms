@@ -17,7 +17,7 @@ public class ShellSort extends InsertionSort {
         if (!valid(data)) {
             return;
         }
-        for (int i = 2; data.length / i > 0; i*=2) {
+        for (int i = 2; data.length / i > 0; i *= 2) {
             sortByGap(data, data.length / i);
         }
     }
@@ -30,7 +30,7 @@ public class ShellSort extends InsertionSort {
         if (!valid(data)) {
             return;
         }
-        for (int i = 4; data.length / i * 2 + 1 > 0; i*=2) {
+        for (int i = 4; data.length / i * 2 + 1 > 0; i *= 2) {
             sortByGap(data, data.length / i * 2 + 1);
         }
     }
@@ -134,7 +134,7 @@ public class ShellSort extends InsertionSort {
             if (k % 2 == 1) {
                 gap = 8 * (2 << k) - 6 * (2 << ((k + 1) / 2)) + 1;
             } else {
-                gap =  9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
+                gap = 9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
             }
         } while (gap < data.length);
 
@@ -142,7 +142,7 @@ public class ShellSort extends InsertionSort {
             if (k % 2 == 1) {
                 gap = 8 * (2 << k) - 6 * (2 << ((k + 1) / 2)) + 1;
             } else {
-                gap =  9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
+                gap = 9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
             }
             sortByGap(data, gap);
             k--;
@@ -151,25 +151,53 @@ public class ShellSort extends InsertionSort {
 
     /**
      * By Gonnet & Baeza-Yates, 1991
+     *
      * @param data 待排序数组
      */
     public void gb91(int[] data) {
-
+        if (!valid(data)) {
+            return;
+        }
+        int gap = data.length * 5 / 11;
+        while (gap > 1) {
+            sortByGap(data, gap);
+            gap *= 5 / 11;
+        }
+        sortByGap(data, 1);
     }
 
     /**
      * By Tokuda, 1992
-     * @param data 待排序数组
-     */
-    public void to92(int[] data) {
-
-    }
-
-    /**
      *
      * @param data 待排序数组
      */
-    public void ci01(int[] data) {
+    public void to92(int[] data) {
+        if (!valid(data)) {
+            return;
+        }
+        int k = 1;
+        while (((9 << k) - (4 << k)) / (5 * (4 << (k - 1))) < data.length) {
+            k++;
+        }
+        while (k > 0) {
+            sortByGap(data, ((9 << k) - (4 << k)) / (5 * (4 << (k - 1))));
+            k--;
+        }
+    }
 
+    /**
+     * By Ciura, 2001
+     * @param data 待排序数组
+     */
+    public void ci01(int[] data) {
+        if (!valid(data)) {
+            return;
+        }
+        int[] gap = new int[]{1, 4, 10, 23, 57, 132, 301, 701, 1750};
+        for (int i = gap.length - 1; i >= 0; i--) {
+            if (gap[i] < data.length) {
+                sortByGap(data, gap[i]);
+            }
+        }
     }
 }
