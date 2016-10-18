@@ -6,12 +6,25 @@ package com.algorithms.random;
  */
 public interface Random {
 
+
+    /**
+     * 设置随机种子
+     * @param seed 随机种子
+     */
     void setSeed(long seed);
 
+    /**
+     * 生成随机数
+     * @return 随机数
+     */
     long next();
 
-    int nextInt();
+    default int nextInt(int max) {
 
-    double nextDouble();
+    }
+
+    default double nextDouble(){
+
+    }
 
 }

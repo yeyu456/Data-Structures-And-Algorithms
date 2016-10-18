@@ -12,8 +12,10 @@ Data Structures And Algorithms Implements
 
 ### Sorting
 - Exchange sort
-    - [Bubble Sort](src/com/algorithms/sort/bubble/BubbleSort.java)
+    - [Bubble Sort](src/com/algorithms/sort/exchange/BubbleSort.java)
     - Cocktail Sort
+    - Quick Sort
+        - [Quick Sort](src/com/algorithms/sort/exchange/quick/QuickSort.java)
 - Selection Sort
     - [Selection Sort](src/com/algorithms/sort/selection/SelectionSort.java)
     - Bingo Sort
@@ -22,7 +24,6 @@ Data Structures And Algorithms Implements
     - [Shell Sort](src/com/algorithms/sort/insertion/ShellSort.java)
 - Merge Sort
     - [Merge Sort](src/com/algorithms/sort/merge/MergeSort.java)
-- Quick Sort
 
 ### Random
 - [Middle Square](src/com/algorithms/random/MiddleSquare.java)

@@ -1,8 +1,5 @@
 package com.algorithms.sort.insertion;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Standard Shell Sort And Its Optimizations
  * 标准希尔排序及其改进版本

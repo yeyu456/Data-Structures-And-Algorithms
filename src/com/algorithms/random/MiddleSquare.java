@@ -4,7 +4,7 @@ package com.algorithms.random;
  * Pseudo Random Number Generate Algorithm - Middle Square Method
  * 伪随机数生成算法-平方取中方法
  */
-public class MiddleSquare {
+public class MiddleSquare implements Random {
 
     private long seed;
 
@@ -12,15 +12,13 @@ public class MiddleSquare {
      * 设置随机种子
      * @param seed 随机种子
      */
+    @Override
     public void setSeed(long seed) {
         this.seed = seed;
     }
 
-    /**
-     * 生成随机数
-     * @return 随机数
-     */
-    public long random() {
+    @Override
+    public long next() {
         long square = this.seed * this.seed;
         int m = String.valueOf(this.seed).length();
         String numStr = String.format("%0" + (m * 2) + "d", square);

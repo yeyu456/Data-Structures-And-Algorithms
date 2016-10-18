@@ -1,10 +1,12 @@
 package com.algorithms.random.lcg;
 
+import com.algorithms.random.Random;
+
 /**
  * Pseudo Random Number Generate Algorithm - Linear Congruential Generator(aka LCG)
  * 伪随机数生成算法-线性同余
  */
-public class LCG {
+public class LCG  implements Random {
 
     private long seed;
     private long mod;
@@ -19,11 +21,7 @@ public class LCG {
         this.increment = 11;
     }
 
-    /**
-     * 设置随机种子
-     *
-     * @param seed 随机种子
-     */
+    @Override
     public void setSeed(long seed) {
         this.seed = seed;
     }
@@ -40,13 +38,10 @@ public class LCG {
         this.increment = increment;
     }
 
-    /**
-     * 生成随机数
-     *
-     * @return 随机数
-     */
-    public long random() {
+    @Override
+    public long next() {
         this.seed = (this.multiplier * this.seed + this.increment) % this.mod;
         return this.seed;
     }
 }
+
