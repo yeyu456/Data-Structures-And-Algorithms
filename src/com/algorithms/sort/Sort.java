@@ -9,8 +9,9 @@ public interface Sort {
     /**
      * 排序方法
      * @param data 待排序数组
+     * @return 排序主要语句执行次数
      */
-    void sort(int[] data);
+    long sort(int[] data);
 
     /**
      * 交换数组中的元素
