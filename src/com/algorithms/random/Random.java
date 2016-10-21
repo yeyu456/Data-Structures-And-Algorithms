@@ -19,8 +19,8 @@ public interface Random {
      */
     long next();
 
-    default int nextInt(int max) {
-
+    default int nextInt(int min, int max) {
+        return next() % (max - min) + min;
     }
 
     default double nextDouble(){

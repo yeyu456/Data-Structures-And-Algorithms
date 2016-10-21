@@ -1,14 +1,12 @@
 package com.algorithms.sort.insertion;
 
 /**
- * Standard Shell Sort And Its Optimizations
- * 标准希尔排序及其改进版本
+ * Standard Shell Sort By Donald L. Shell, 1959
+ * 标准希尔排序 - Donald L. Shell, 1959
  */
-public class ShellSort extends InsertionSort {
+public class ShellSort extends InsertionSortR1 {
 
     /**
-     * By Donald L. Shell, 1959
-     *
      * 假设 N 为给定数组长度
      * 排序间隔的表达式:
      *      h_k = Math.floor(N / (2^k)), k >= 1
@@ -16,239 +14,17 @@ public class ShellSort extends InsertionSort {
      *      h_{k} = \left \lfloor \frac {N} {2^{k}} \right \rfloor, h_{k} \geqslant 1
      *
      * @param data 待排序数组
+     * @return 排序主要语句执行次数
      */
     @Override
-    public void sort(int[] data) {
+    public long sort(int[] data) {
+        long count = 0;
         if (!valid(data)) {
-            return;
+            return count;
         }
         for (int i = 2; data.length / i > 0; i *= 2) {
-            sortByGap(data, data.length / i);
+            count += sortByGap(data, data.length / i);
         }
-    }
-
-    /**
-     * By Frank & Lazarus, 1960
-     *
-     * 假设 N 为给定数组长度
-     * 排序间隔的表达式:
-     *      h_k = 2 * Math.floor(N / (2^(k+1))) + 1, k >= 1
-     * LaTeX格式:
-     *      h_{k} = 2 \times \left \lfloor \frac {N} {2^{k+1}} \right \rfloor + 1, h_{k} \geqslant 1
-     *
-     * @param data 待排序数组
-     */
-    public void fl60(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        for (int i = 4; data.length / i * 2 + 1 > 0; i *= 2) {
-            sortByGap(data, data.length / i * 2 + 1);
-        }
-    }
-
-    /**
-     * By Hibbard, 1963
-     *
-     * 假设 N 为给定数组长度
-     * 排序间隔的表达式:
-     *      h_k = 2^k - 1, h_k < N
-     * LaTeX格式:
-     *      h_{k} = 2^{k} - 1, h_{k} < N
-     *
-     * @param data 待排序数组
-     */
-    public void hi63(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int k = 1;
-        while (((2 << k) - 1) < data.length) {
-            k++;
-        }
-        while (k > 0) {
-            sortByGap(data, (2 << k) - 1);
-            k--;
-        }
-    }
-
-    /**
-     * By Papernov & Stasevich, 1965
-     *
-     * 假设 N 为给定数组长度
-     * 排序间隔的表达式:
-     *      h_k = 2^k + 1, h_k < N
-     * LaTeX格式:
-     *      h_{k} = 2^{k} + 1, h_{k} < N
-     *
-     * @param data 待排序数组
-     */
-    public void ps65(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int k = 0;
-        while (((2 << k) + 1) < data.length) {
-            k++;
-        }
-        while (k >= 0) {
-            sortByGap(data, (2 << k) + 1);
-            k--;
-        }
-    }
-
-    /**
-     * By Pratt, 1971
-     * @param data 待排序数组
-     */
-    public void pr71(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        //TODO
-    }
-
-    /**
-     * By Donald Ervin Knuth, 1973
-     *
-     * 假设 N 为给定数组长度
-     * 排序间隔的表达式:
-     *      h_k = (3^k - 1) / 2, h_k <= Math.ceil(N / 3)
-     * LaTeX格式:
-     *      h_{k} = \frac{3^{k} - 1}{2}, h_{k} \leq \left \lceil \frac{N}{3} \right \rceil
-     *
-     * @param data 待排序数组
-     */
-    public void kn73(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int k = 1;
-        while ((((3 << k) - 1) / 2) < data.length) {
-            k++;
-        }
-        while (k > 0) {
-            sortByGap(data, ((3 << k) - 1) / 2);
-            k--;
-        }
-    }
-
-    /**
-     * By Sedgewick, 1982
-     *
-     * 假设 N 为给定数组长度
-     * 排序间隔的表达式:
-     *      h_k = 4^k + 3 * 2^(k-1) + 1, h_k < N
-     * LaTeX格式:
-     *      h_{k} = 4 ^ {k} + 3 \times 2 ^ {k-1} + 1, h_{k} < N
-     *
-     * @param data 待排序数组
-     */
-    public void se82(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int k = 1;
-        while (((4 << k) + 3 * (2 << k - 1) + 1) < data.length) {
-            k++;
-        }
-        while (k > 0) {
-            sortByGap(data, ((4 << k) + 3 * (2 << k - 1) + 1));
-            k--;
-        }
-        sortByGap(data, 1);
-    }
-
-    /**
-     * By Sedgewick, 1986
-     *
-     * 假设 N 为给定数组长度
-     * 排序间隔的表达式:
-     *      if k为奇数
-     *          h_k = 8 * 2^k - 6 * (2^((k + 1) / 2)) + 1,
-     *      k为偶数
-     *          h_k = 9 * 2^k - 9 * (2^(k / 2)) + 1,
-     *      h_k < N
-     * LaTeX格式:
-     *
-     *
-     * @param data 待排序数组
-     */
-    public void se86(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int k = -1;
-        int gap;
-        do {
-            k++;
-            if (k % 2 == 1) {
-                gap = 8 * (2 << k) - 6 * (2 << ((k + 1) / 2)) + 1;
-            } else {
-                gap = 9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
-            }
-        } while (gap < data.length);
-
-        while (k >= 0) {
-            if (k % 2 == 1) {
-                gap = 8 * (2 << k) - 6 * (2 << ((k + 1) / 2)) + 1;
-            } else {
-                gap = 9 * (2 << k) - 9 * (2 << (k / 2)) + 1;
-            }
-            sortByGap(data, gap);
-            k--;
-        }
-    }
-
-    /**
-     * By Gonnet & Baeza-Yates, 1991
-     *
-     * @param data 待排序数组
-     */
-    public void gb91(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int gap = data.length * 5 / 11;
-        while (gap > 1) {
-            sortByGap(data, gap);
-            gap *= 5 / 11;
-        }
-        sortByGap(data, 1);
-    }
-
-    /**
-     * By Tokuda, 1992
-     *
-     * @param data 待排序数组
-     */
-    public void to92(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int k = 1;
-        while (((9 << k) - (4 << k)) / (5 * (4 << (k - 1))) < data.length) {
-            k++;
-        }
-        while (k > 0) {
-            sortByGap(data, ((9 << k) - (4 << k)) / (5 * (4 << (k - 1))));
-            k--;
-        }
-    }
-
-    /**
-     * By Ciura, 2001
-     * @param data 待排序数组
-     */
-    public void ci01(int[] data) {
-        if (!valid(data)) {
-            return;
-        }
-        int[] gap = new int[]{1, 4, 10, 23, 57, 132, 301, 701, 1750};
-        for (int i = gap.length - 1; i >= 0; i--) {
-            if (gap[i] < data.length) {
-                sortByGap(data, gap[i]);
-            }
-        }
+        return count;
     }
 }

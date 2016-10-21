@@ -3,8 +3,8 @@ package com.algorithms.sort.selection;
 import com.algorithms.sort.Sort;
 
 /**
- * Selection Sort Implement
- * 选择排序实现
+ * Standard Selection Sort
+ * 标准选择排序
  */
 public class SelectionSort implements Sort {
 

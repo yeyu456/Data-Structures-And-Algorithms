@@ -1,10 +1,14 @@
 package com.algorithms.sort;
 
+import com.algorithms.sort.insertion.InsertionSort;
+import com.algorithms.sort.insertion.InsertionSortR1;
+import com.algorithms.sort.selection.SelectionSort;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -24,10 +28,18 @@ public class ReversedSortTest {
     }
 
     @Test
-    public void selectionSort() {
+    public void sort() {
         long[] count = new long[this.dataList.size()];
-        for (int[] data : this.dataList) {
+        List<Sort> sortList = new ArrayList<>();
+        sortList.add(new SelectionSort());
+        sortList.add(new InsertionSort());
+        sortList.add(new InsertionSortR1());
 
+
+        SelectionSort sort = new SelectionSort();
+        for (int i=0;i<this.dataList.size();i++) {
+            int[] data = Arrays.copyOf(this.dataList.get(i), this.dataList.get(i).length);
+            count[i] = sort.sort(data);
         }
     }
 
