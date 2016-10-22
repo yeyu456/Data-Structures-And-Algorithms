@@ -1,4 +1,4 @@
-package com.algorithms.sort.exchange.quick;
+package com.algorithms.sort.exchange;
 
 import com.algorithms.random.lcg.LCG;
 import com.algorithms.sort.Sort;
@@ -10,16 +10,18 @@ import com.algorithms.sort.Sort;
 public class QuickSort implements Sort {
 
     @Override
-    public void sort(int[] data) {
+    public long sort(int[] data) {
+        long count = 0;
         if (!valid(data)) {
-            return;
+            return count;
         }
+        return count;
     }
 
     protected void shuffle(int[] data) {
         LCG random = new LCG();
         for (int i = 0; i < data.length; i++) {
-            random.
+
         }
     }
 }

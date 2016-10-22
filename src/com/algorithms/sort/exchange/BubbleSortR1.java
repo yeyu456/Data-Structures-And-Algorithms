@@ -3,10 +3,10 @@ package com.algorithms.sort.exchange;
 import com.algorithms.sort.Sort;
 
 /**
- * Standard Bubble Sort
- * 标准冒泡排序
+ * Bubble Sort Optimized Last Swapped Elements
+ * 冒泡排序优化最后交换过的元素
  */
-public class BubbleSort implements Sort {
+public class BubbleSortR1 implements Sort {
 
     @Override
     public long sort(int[] data) {
@@ -14,17 +14,18 @@ public class BubbleSort implements Sort {
         if (!valid(data)) {
             return count;
         }
-        boolean isSwapped;
+        int n = data.length;
         do {
-            isSwapped = false;
-            for (int i = 1; i < data.length; i++) {
+            int newN = n;
+            for (int i = 1; i < n; i++) {
                 if (data[i - 1] > data[i]) {
                     swap(i - 1, i, data);
-                    isSwapped = true;
+                    newN = i;
                 }
                 count++;
             }
-        } while (isSwapped);
+            n = newN;
+        } while (n == 0);
         return count;
     }
 }

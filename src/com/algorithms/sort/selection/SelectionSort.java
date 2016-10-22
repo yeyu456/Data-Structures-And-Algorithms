@@ -8,6 +8,7 @@ import com.algorithms.sort.Sort;
  */
 public class SelectionSort implements Sort {
 
+    @Override
     public long sort(int[] data) {
         long count = 0;
         if (!valid(data)) {
