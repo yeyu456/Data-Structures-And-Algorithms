@@ -20,11 +20,11 @@ public interface Random {
     long next();
 
     default int nextInt(int min, int max) {
-        return next() % (max - min) + min;
+        return new Long(next()).intValue() % (max - min) + min;
     }
 
     default double nextDouble(){
-
+        return 0.0;
     }
 
 }

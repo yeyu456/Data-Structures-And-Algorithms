@@ -15,7 +15,6 @@ public class ShellSortSE86 extends InsertionSortR1 {
      *          h_k = 9 * 2^k - 9 * (2^(k / 2)) + 1,
      *      h_k < N
      * LaTeX格式:
-     *      \usepackage{amsmath}
      *          h_{k} =
      *      \begin{cases}
      *          8 \times 2^{k} - 6 \times 2^{(k + 1) \div 2} + 1, & \text{if k is odd}\\

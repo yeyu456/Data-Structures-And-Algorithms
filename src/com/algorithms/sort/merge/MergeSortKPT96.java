@@ -23,6 +23,6 @@ public class MergeSortKPT96 extends MergeSortB2T {
 
     private long kWayMerge(int blockSize, int[] data) {
         long count = 0;
-
+        return count;
     }
 }

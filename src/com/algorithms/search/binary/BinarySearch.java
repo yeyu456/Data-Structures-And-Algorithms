@@ -13,7 +13,7 @@ public class BinarySearch {
      * @param <T> 查找数据类型，必须实现比较接口
      * @return (-1:查找数值不存在于数据集;其他:数值所在数据集的下标序号)
      */
-    public static <T extends Comparable> int search(T[] data, T num) {
+    public static <T extends Comparable<? super T>> int search(T[] data, T num) {
         if (data == null || data.length == 0) {
             throw new IllegalArgumentException("Invalid data array.");
         } else if (num == null) {
