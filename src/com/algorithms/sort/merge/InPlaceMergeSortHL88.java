@@ -18,7 +18,6 @@ public class InPlaceMergeSortHL88 implements Sort {
         int FStart = 0;
         int AEnd = data.length / 2;
         int BStart = AEnd + 1;
-        int FEnd = ;
 
     }
 }

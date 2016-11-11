@@ -10,15 +10,16 @@ import java.util.Random;
  */
 public class QuickSort implements Sort {
 
+    private int count = 0;
+
     @Override
     public long sort(int[] data) {
-        long count = 0;
         if (!valid(data)) {
-            return count;
+            return this.count;
         }
         shuffle(data);
         quickSort(0, data.length - 1, data);
-        return count;
+        return this.count;
     }
 
     protected void shuffle(int[] data) {
@@ -50,9 +51,11 @@ public class QuickSort implements Sort {
             } while (data[j] > pivot && j > lo);
             if (i >= j) {
                 swap(lo, j , data);
+                this.count++;
                 return j;
             }
             swap(i, j, data);
+            this.count++;
         }
     }
 }

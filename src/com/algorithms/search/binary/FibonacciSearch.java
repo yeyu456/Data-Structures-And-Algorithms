@@ -1,5 +1,7 @@
 package com.algorithms.search.binary;
 
+import java.util.Arrays;
+
 /**
  * Fibonacci Search Implement In Ascending Order Array With Distinct Numbers
  * 升序排列的无重复数字数组中，基于斐波那契的二分搜索实现
@@ -18,6 +20,8 @@ public class FibonacciSearch {
         if (data[data.length-1] == num) {
             return data.length - 1;
         }
+
+
 
         //Find the two bigest fibonacci number
         //找出最大两个斐波那契数
