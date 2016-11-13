@@ -1,6 +1,5 @@
 package com.algorithms.search.binary;
 
-import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,6 +16,6 @@ public class BitonicBruteForceSearch {
         int len = BitonicSearchTestSuite.NUM.length;
         int searchIndex = BitonicSearch.bruteForceSearch(Arrays.copyOf(BitonicSearchTestSuite.NUM, len),
                 BitonicSearchTestSuite.SEARCH_NUM);
-        Assert.assertNotEquals(searchIndex, -1);
+        Assert.assertNotSame(searchIndex, -1);
     }
 }
