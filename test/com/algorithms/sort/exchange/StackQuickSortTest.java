@@ -1,6 +1,7 @@
 package com.algorithms.sort.exchange;
 
 import org.junit.Test;
+import org.testng.ITestContext;
 
 import static org.junit.Assert.*;
 
@@ -11,8 +12,9 @@ public class StackQuickSortTest {
 
 
     @Test
-    public void sort() throws Exception {
+    public void sort(ITestContext context) throws Exception {
         StackQuickSort sort = new StackQuickSort();
+        sort.sort();
     }
 
 }
