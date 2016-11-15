@@ -45,12 +45,12 @@ public class QuickSort implements Sort {
         while (true) {
             do {
                 i++;
-            } while (data[i] < pivot && i < hi);
+            } while (i < hi && data[i] < pivot );
             do {
                 j--;
-            } while (data[j] > pivot && j > lo);
+            } while (j > lo && data[j] > pivot);
             if (i >= j) {
-                swap(lo, j , data);
+                swap(lo, j, data);
                 this.count++;
                 return j;
             }

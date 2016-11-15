@@ -23,7 +23,7 @@ public class StackQuickSort extends QuickSort {
             int low = bound[0];
             int hi = bound[1];
             while (low <= hi) {
-                int pivot = partitionByPivot(low, hi, bound[0], data);
+                int pivot = partitionByPivot(low, hi, low, data);
                 stack.push(new Integer[]{pivot + 1, hi});
                 hi = pivot - 1;
                 count++;

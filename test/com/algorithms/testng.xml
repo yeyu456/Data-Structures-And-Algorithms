@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="QuickSortSuite" verbose="1" >
+    <test name="StackQuickSort" >
+        <classes>
+            <class name="com.algorithms.sort.exchange.QuickSortTestSuite" />
+            <class name="com.algorithms.sort.exchange.StackQuickSortTest" />
+        </classes>
+    </test>
+</suite>

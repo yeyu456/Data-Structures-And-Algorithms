@@ -10,12 +10,12 @@ import java.util.Arrays;
  * 暴力搜索测试
  */
 public class BitonicBruteForceSearch {
-
-    @Test
-    public void bruteForceSearch() {
-        int len = BitonicSearchTestSuite.NUM.length;
-        int searchIndex = BitonicSearch.bruteForceSearch(Arrays.copyOf(BitonicSearchTestSuite.NUM, len),
-                BitonicSearchTestSuite.SEARCH_NUM);
-        Assert.assertNotSame(searchIndex, -1);
-    }
+//
+//    @Test
+//    public void bruteForceSearch() {
+//        int len = BitonicSearchTestSuite.NUM.length;
+//        int searchIndex = BitonicSearch.bruteForceSearch(Arrays.copyOf(BitonicSearchTestSuite.NUM, len),
+//                BitonicSearchTestSuite.SEARCH_NUM);
+//        Assert.assertNotSame(searchIndex, -1);
+//    }
 }

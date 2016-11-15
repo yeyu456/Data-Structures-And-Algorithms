@@ -2,10 +2,6 @@ package com.algorithms.data;
 
 import java.security.SecureRandom;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -21,6 +17,9 @@ public class DataRepository {
     public final static String[] DATA_TYPE = new String[]{"random", "sorted", "revered", "partial_sorted", "repeated"};
 
     public final static int DATA_SET_SCALE = 5;
+
+    public final static int TEST_NUM = 25;
+
 
     public final static int DATA_SET_START_SIZE_NUM = 1000;
 
@@ -59,22 +58,22 @@ public class DataRepository {
         return data;
     }
 
-    private static int[] getSortedData(final int size, final int max) {
+    public static int[] getSortedData(final int size, final int max) {
         return Arrays.stream(getRandomData(size, max)).parallel().sorted().toArray();
     }
 
-    private static int[] getReveredData(final int size, final int max) {
+    public static int[] getReveredData(final int size, final int max) {
         final int[] data = getSortedData(size, max);
         return IntStream.range(0, data.length)
                 .map(i -> data[data.length - i - 1])
                 .toArray();
     }
 
-    private static int[] getPartialSortedData(final int size, final int max, final int maxSortedSize) {
+    public static int[] getPartialSortedData(final int size, final int max, final int maxSortedSize) {
         return getPatternData(size, maxSortedSize, randomSize -> getSortedData(randomSize, max));
     }
 
-    private static int[] getRepeatedData(int size, int max, int maxRepeatedSize) {
+    public static int[] getRepeatedData(int size, int max, int maxRepeatedSize) {
         Random random = new SecureRandom();
 
         int[] results = getPatternData(size, maxRepeatedSize, randomSize -> {
