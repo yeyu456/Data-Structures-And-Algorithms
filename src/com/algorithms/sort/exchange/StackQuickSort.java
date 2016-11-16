@@ -1,5 +1,6 @@
 package com.algorithms.sort.exchange;
 
+import java.util.Random;
 import java.util.Stack;
 
 /**
@@ -22,8 +23,8 @@ public class StackQuickSort extends QuickSort {
             Integer[] bound = stack.pop();
             int low = bound[0];
             int hi = bound[1];
-            while (low <= hi) {
-                int pivot = partitionByPivot(low, hi, low, data);
+            while (low < hi) {
+                int pivot = partitionByPivot(low, hi, data[low], data);
                 stack.push(new Integer[]{pivot + 1, hi});
                 hi = pivot - 1;
                 count++;

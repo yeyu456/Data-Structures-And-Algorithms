@@ -1,8 +1,6 @@
 package com.algorithms.sort.exchange;
 
 import com.algorithms.data.DataRepository;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeSuite;
 
