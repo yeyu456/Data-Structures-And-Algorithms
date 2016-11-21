@@ -1,8 +1,8 @@
 package com.algorithms.sort.exchange;
 
 /**
- * Quick Sort Optimized By Chosen Median Of Medians Pivot
- * 快速排序优化 - 选择分区中值数的中值数作为切分元素
+ * Quick Sort Optimized With Chosen Median Of Medians Pivot By John Tukey, 1978
+ * 快速排序优化 - 选择分区中值数的中值数作为切分元素 - John Tukey, 1978
  */
 public class NintherQuickSort extends MedianQuickSort {
 
